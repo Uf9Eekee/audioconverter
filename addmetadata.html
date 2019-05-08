@@ -1,0 +1,36 @@
+
+		<div id="metadata_entry_div">
+		<form method="post" enctype="multipart/form-data" action="/postmetadata" id="metadata">
+		<div id="album_metadata_entry">
+			<input type="hidden" name="project" value={{project}}>
+			<label for="album_title">Album title</label>
+			<input type="text" id="album_title" name="album_title" required>
+			<br>
+			<label for="album_artist">Album artist</label>
+			<input type="text" id="album_artist" name="album_artist" required>
+			<br>
+			<label for="release_date">Release date (Optional)</label>
+			<input type="date" id="release_date" name="release_date">
+			<br>
+			<label for=copyright_message">Copyright message (optional)</label>
+			<input type="text" id="copyright_message" name="copyright_message">
+		</div>
+		{% for track in tracks %}
+		<div class="track_metadata_entry">
+			<hr>
+			<p>{{track}}</p>
+			<input type="hidden" name="track" value="{{track}}">
+			<label for="track_name">Track title</label>
+			<input type="text" track="{{track}}" value="" name="{{track}}_title" required>
+
+			<label for="track_composer">Track composer (optional)</label>
+			<input type="text" name="{{track}}_composer">
+
+			<label for="album_artist">ISRC number (optional)</label>
+			<input type="text" name="{{track}}_isrc">
+
+		</div>
+		{%endfor%}
+		<input type="submit" value="Submit">
+		</form>
+		</div>

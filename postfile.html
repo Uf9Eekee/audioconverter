@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>HTML5 Forms</title>
+		<meta name="author" content="Claes Johansson">
+		<meta name="description" content="HTML5 Forms">
+		<meta name="keywords" content="textbox,checkbox,radio button,button,list">
+		<meta name="robots" content="index,follow">
+	</head>
+	
+	<body>
+		<header>
+			<h2>Uploads audio file for conversion</h2>
+		</header>
+			<form method="post" enctype="multipart/form-data" action="http://127.0.0.1:5000/upload">
+				<fieldset>
+					<legend>File upload demonstration form</legend>
+					<input type="file" name="masters" accept=".wav" multiple>
+					<label for="projectname">Project name</label>
+					<input type="text" name="projectname" id="projectname" required pattern="[A-Za-z0-9]{5,}">
+					<br>
+					<input type="submit" name="submit" value="Submit project">
+				</fieldset>
+			</form>
+	</body>
+</html>
